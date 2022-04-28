@@ -30,7 +30,7 @@ android {
     }
 }
 
-def agoraVersion = "2.4.100"
+def agoraVersion = "2.4.1"
 
 dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
