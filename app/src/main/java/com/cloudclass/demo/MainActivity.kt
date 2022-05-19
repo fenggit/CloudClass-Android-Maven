@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
 import android.widget.Button
-import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import com.cloudclass.demo.test.rtmtoken.RtmTokenBuilder
 import io.agora.agoraeducore.core.internal.framework.proxy.RoomType
@@ -42,10 +41,10 @@ class MainActivity : AppCompatActivity() {
         val rtmToken = RtmTokenBuilder().buildToken(appId, appCert, userUuid, RtmTokenBuilder.Role.Rtm_User, 0)
 
         val config = AgoraEduLaunchConfig(
-            "xiaoming"/*userName*/,
-            userUuid /*userUuid 最后一位数：2表示学生*/,
-            roomName/*roomName*/,
-            roomName + "4"/*roomuuid最后一位数：0 一对一 2大班课 4小班课*/,
+            "xiaoming",
+            userUuid,               // userUuid 最后一位数：2表示学生
+            roomName,
+            roomName + "4", // roomUuid最后一位数：0 一对一 2大班课 4小班课
             AgoraEduRoleType.AgoraEduRoleTypeStudent.value,   // 角色：1:老师角色 2:学生角色
             RoomType.LARGE_CLASS.value,  // 房间：0 一对一 2大班课 4小班课
             rtmToken,
@@ -55,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             null,
             null,
             AgoraEduStreamState(videoState = 1, audioState = 1), //用户上台默认是否发流 1:是 0:否
-            AgoraEduLatencyLevel.AgoraEduLatencyLevelUltraLow, //默认延时等级
+            AgoraEduLatencyLevel.AgoraEduLatencyLevelUltraLow,   //默认延时等级
             null,
             null
         )
