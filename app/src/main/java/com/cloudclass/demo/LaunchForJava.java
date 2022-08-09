@@ -40,6 +40,8 @@ public class LaunchForJava {
             e.printStackTrace();
         }
 
+
+        // 简单配置参数
         AgoraEduLaunchConfig config = new AgoraEduLaunchConfig(
                 "xiaoming",
                 userUuid,               // userUuid 最后一位数：2表示学生
@@ -48,16 +50,30 @@ public class LaunchForJava {
                 AgoraEduRoleType.AgoraEduRoleTypeStudent.getValue(),   // 角色：1:老师角色 2:学生角色
                 RoomType.LARGE_CLASS.getValue(),  // 房间：0 一对一 2大班课 4小班课
                 rtmToken,
-                null,     // 上课开始时间
-                1800L,     // 课程时长
-                AgoraEduRegion.cn, // 区域
-                null,
-                null,
-                new AgoraEduStreamState(1, 1), //用户上台默认是否发流 1:是 0:否
-                AgoraEduLatencyLevel.AgoraEduLatencyLevelUltraLow,   //默认延时等级
-                null,
-                null
+                null,  // 上课开始时间
+                1800L   // 课程时长
         );
+        //config.setRegion(AgoraEduRegion.cn);
+
+         // 复杂配置参数
+//        AgoraEduLaunchConfig config = new AgoraEduLaunchConfig(
+//                "xiaoming",
+//                userUuid,               // userUuid 最后一位数：2表示学生
+//                roomName,
+//                roomName + "4", // roomUuid最后一位数：0 一对一 2大班课 4小班课
+//                AgoraEduRoleType.AgoraEduRoleTypeStudent.getValue(),   // 角色：1:老师角色 2:学生角色
+//                RoomType.LARGE_CLASS.getValue(),  // 房间：0 一对一 2大班课 4小班课
+//                rtmToken,
+//                null,     // 上课开始时间
+//                1800L,     // 课程时长
+//                AgoraEduRegion.cn, // 区域
+//                null,
+//                null,
+//                new AgoraEduStreamState(1, 1), //用户上台默认是否发流 1:是 0:否
+//                AgoraEduLatencyLevel.AgoraEduLatencyLevelUltraLow,   //默认延时等级
+//                null,
+//                null
+//        );
 
         AgoraClassroomSDK.INSTANCE.setConfig(new AgoraClassSdkConfig(appId));
         AgoraClassroomSDK.INSTANCE.launch(context, config, new AgoraEduLaunchCallback() {
