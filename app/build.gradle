@@ -34,7 +34,7 @@ def callback = {
     exclude group: 'io.agora.rtc', module: 'full-sdk'
 }
 
-def agoraVersion = "2.8.21"
+def agoraVersion = "2.8.30"
 
 dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
