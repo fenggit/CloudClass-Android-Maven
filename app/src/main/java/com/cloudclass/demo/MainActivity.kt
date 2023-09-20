@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
      * TODO 这里所有的参数需要从自己的服务器获取，这是只是为了测试
      */
     fun startClassRoom() {
-        val userName = "zhangsanXX"
+        val userName = "zhangsanXXQQQ"
         val roomName = "MyRoom124"
         val roomType = RoomType.SMALL_CLASS.value // 班型： 0 一对一 2大班课 4小班课
         val roleType = AgoraEduRoleType.AgoraEduRoleTypeStudent.value // 角色：1:老师角色 2:学生角色
@@ -88,6 +88,13 @@ class MainActivity : AppCompatActivity() {
             Log.e("agora", ":launch-课堂状态:" + event.name)
             dismissLoadingDialog()
         })
+
+        // 通用场景
+//        AgoraOnlineClassroomSDK.setConfig(AgoraOnlineClassSdkConfig(appId))
+//        AgoraOnlineClassroomSDK.launch(this, config, AgoraEduLaunchCallback { event ->
+//            Log.e("agora", ":launch-课堂状态:" + event.name)
+//            dismissLoadingDialog()
+//        })
     }
 
     fun showLoadingDialog() {

@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.cloudclass.demo"
         minSdk 21
-        targetSdk 31
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -34,7 +34,7 @@ def callback = {
     exclude group: 'io.agora.rtc', module: 'full-sdk'
 }
 
-def agoraVersion = "2.8.40"
+def agoraVersion = "2.8.61"
 
 dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -43,10 +43,15 @@ dependencies {
     // RtmTokenBuilder need for test
     implementation "commons-codec:commons-codec:1.15"
 
-    // 灵动课堂SDK
+    // 灵动课堂：1v1 小班课 大班课
     implementation "io.github.agoraio-community:AgoraEduUIKit:$agoraVersion"
     implementation "io.github.agoraio-community:AgoraClassSDK:$agoraVersion"
     implementation "io.github.agoraio-community:AgoraEduCore:$agoraVersion"
+
+    // 灵动课堂：云课堂，通用场景
+    //implementation "io.github.agoraio-community:AgoraCloudScene:$agoraVersion"
+    //implementation "io.github.agoraio-community:AgoraEduCore:$agoraVersion"
+
     // 2.7.0 以后的版本，删除此库
     // implementation "io.github.agoraio-community:hyphenate:$agoraVersion"
 }
