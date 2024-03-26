@@ -16,6 +16,8 @@ import com.cloudclass.demo.utils.HashUtil
 import io.agora.agoraeducore.core.context.EduContextVideoEncoderConfig
 import io.agora.agoraeducore.core.internal.framework.proxy.RoomType
 import io.agora.agoraeducore.core.internal.launch.*
+import io.agora.classroom.helper.FCRLauncherListener
+import io.agora.classroom.helper.FCRLauncherManager
 import io.agora.classroom.helper.FcrStreamParameters
 import io.agora.classroom.sdk.AgoraClassSdkConfig
 import io.agora.classroom.sdk.AgoraClassroomSDK
@@ -87,6 +89,12 @@ class MainActivity : AppCompatActivity() {
         AgoraClassroomSDK.launch(this, config, AgoraEduLaunchCallback { event ->
             Log.e("agora", ":launch-课堂状态:" + event.name)
             dismissLoadingDialog()
+        })
+
+        FCRLauncherManager.addLauncherListener(config.roomUuid, object : FCRLauncherListener {
+            override fun onExit() {
+                Log.e("agora", "exit")
+            }
         })
 
         // 通用场景

@@ -1,6 +1,7 @@
 package com.cloudclass.demo
 
 import android.app.Application
+//import io.agora.agoraeducore.core.internal.launch.AgoraSDKInitUtils
 
 /**
  * author : felix
@@ -10,6 +11,7 @@ import android.app.Application
 class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
-        //AgoraSDKInitUtils.initSDK(this)
+        // 2.8.70 开始
+        // AgoraSDKInitUtils.initSDK(this)
     }
 }
